@@ -3,6 +3,10 @@ class TweetsController < ApplicationController
 
   before_action :authenticate_user!
 
+  include TweetsHelper
+
+
+
   # GET /tweets
   # GET /tweets.json
   def index
@@ -30,20 +34,7 @@ class TweetsController < ApplicationController
 
     message_arr = @tweet.message.split
 
-    message_arr.each_with_index do |word, index|
-      if word[0] == '#'
-        if Tag.pluck(:phrase).include?(word)
-          tag = Tag.find_by(phrase: word)
-        else
-          tag = Tag.create(phrase: word)
-        end
-          tweet_tag = TweetTag.create(tweet_id: @tweet.id, tag_id: tag.id)
-          # query string added to message array.
-          message_arr[index] = "<a href='/tag_tweets?id=#{tag.id}'>#{word}</a>"
-      end
-    end
-    @tweet.update(message: message_arr.join(" "))
-
+    @tweet = get_tagged(@tweet)
     respond_to do |format|
       if @tweet.save
         format.html { redirect_to @tweet, notice: 'Tweet was successfully created.' }

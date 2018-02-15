@@ -13,7 +13,8 @@
               <% end %>&nbsp; 
             <%= link_to tweet.user.username, show_user_path(id: tweet.user.id) %></h3>
           <p class='tweetoutput'>
-            <%= tweet.message %>
+            <%= tweet.message.html_safe %><br>
+            <%= tweet.user_id %>
           </p>
           <div class='container tweetbtn'>
             <%= link_to 'Show', tweet, class: 'btn btn-sm btn-default tweetshow' %>
