@@ -17,3 +17,103 @@
 @import 'bootstrap';
 @import 'font-awesome';
 
+<<<<<<< HEAD
+=======
+.navbar {
+    background-color: #070591;
+
+}
+
+.navbar .navbar-right {
+    background-color: #070591;
+    color: #ffffff;
+}
+
+.navbar .dropdown-toggle {
+    background-color: #070591;
+
+}
+
+.dropdown a {
+    background-color: #070591;
+    color: #ffffff;   
+}
+
+.dropdown-menu li {
+    background-color: #070591;    
+    color: #ffffff;
+}
+
+.tweetbtn {
+    display: inline-block;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.tweetshow:hover {
+    background-color: #2c29ec;
+    color: #ffffff;
+}
+
+.tweetedit:hover {
+    background-color: #2c29ec;
+    color: #ffffff;
+}
+
+.tweetdelete:hover {
+    background-color: #ec2929;
+    color: #ffffff;
+}
+
+#tweeter {
+    font-family: Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: bold;
+}
+
+.tweetoutput {
+    font-family: Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.2em;
+}
+
+.tweetshow {
+    border-radius: 0;
+    border: 0;
+    font-size: 1em;
+    margin: 0;
+}
+
+.tweetedit {
+    border-radius: 0;
+    border-right: 0;
+    border: 0;
+    font-size: 1em;
+    margin: 0;
+    margin-left: -4px;
+}
+
+.tweetdelete {
+    border-radius: 0;
+    border: 0;
+    font-size: 1em;
+    margin: 0;
+    margin-left: -4px;
+}
+
+.tweetnew {
+    border-radius: 0;
+    border: 2px;
+    border-color: #1210a0;
+    font-family: Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.2em;
+    margin: 0;
+}
+
+.tweetnew:hover {
+    background-color: #2c29ec;
+    color: #ffffff;
+    border: 2px;
+    border-color: #1210a0;
+    font-size: 1.3em;
+}
+>>>>>>> bec846cfd5911d9e9b2d5162818188cfe9019334
