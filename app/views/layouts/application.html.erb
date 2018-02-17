@@ -6,6 +6,8 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Montserrat" rel="stylesheet"> 
+
   </head>
 
   <body>
@@ -34,7 +36,7 @@
                         <% if current_user.avatar.blank? == false %>
                           <%= image_tag current_user.avatar.url, size:25, class: "user-pic-nav" %>
                         <% end %> 
-                        @<%= current_user.username %> <span class="caret"></span></a>
+                        @<%= current_user.username %><span class="caret"></span></a>
                       <ul class="dropdown-menu">
                         <li><%= link_to "Edit Profile", edit_user_registration_path, class: 'btn btn-xs btn-success' %>
                             <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: 'btn btn-xs btn-danger' %>
