@@ -6,17 +6,25 @@
 
 <p>
     <% if current_user.following.include?(@user.id) %>
-        <%= link_to "Unfollow", unfollow_path(id: @user.id), class: "btn btn-xs btn-danger" %>
+        <%= link_to "Following", unfollow_path(id: @user.id), class: "btn btn-xs btn-primary", id: 'unfollow_btn' %>
     <% else %>
         <% if current_user.id != @user.id %>
-            <%= link_to "Follow", now_following_path(id: @user.id), class: "btn btn-xs btn-success" %>
+            <%= link_to "Follow", now_following_path(id: @user.id), class: "btn btn-xs btn-primary", id: 'follow-btn' %>
         <% end %>
     <% end %>
 </p>
 
-<% @user.tweets.each do |tweet| %>
+<% @user.tweets.reverse.each do |tweet| %>
     <div>
-        <p>@<%= @user.username %></p>
-    <p><%= tweet.message %></p>
+        <p>
+            <%= image_tag current_user.avatar.url, size:25, class: "user-pic-nav" %>
+            @<%= @user.username %>
+        </p>
+        <p>
+            <%= tweet.message.html_safe %>
+            &#8226; <%= time_ago_in_words(tweet.created_at) if Time.now - tweet.created_at < 86400 %>
+                    <%= tweet.created_at.strftime('%b%e') if Time.now - tweet.created_at > 86400 %>
+
+        </p>
     </div>
 <% end %>

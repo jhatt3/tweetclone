@@ -1,21 +1,21 @@
 <p id="notice"><%= notice %></p>
-<div class='leftside'></div>
 
-<h1 id='tweetshead'>Tweets</h1>
-<div class='row'>
-  <div  class="col-sm-8 tweetpanel">
+
+<h1 id='tweetshead'>Chirps</h1>
+
     <% @tweets.reverse.each do |tweet| %>
       <div class="panel panel-primary">
         <div class="panel-heading">
             <% if tweet.user.avatar.blank? == false %>
               <%= image_tag tweet.user.avatar.url, size: 40, class: "user-pic-nav" %>
             <% end %>&nbsp; 
-              @<%= link_to tweet.user.username, show_user_path(id: tweet.user.id, class: 't-author') %>
+              @<%= link_to tweet.user.username, show_user_path(id: tweet.user.id, class: 't-author') %>&nbsp;
+              <%= tweet.created_at.strftime('%b%e') if Time.now - tweet.created_at > 86400 %>
+              <%= time_ago_in_words(tweet.created_at) if Time.now - tweet.created_at < 86400 %>
         </div>
         <div class="panel-body">
           <p class='tweetoutput'>
             <%= tweet.message.html_safe %><br>
-          <!--  <%= tweet.user_id %> -->
           </p>
         </div>
       </div>
@@ -25,30 +25,6 @@
             <%= link_to 'Remove', tweet, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-xs btn-default tweetdelete' %>
         </div>
     <% end %>
-  </div>
-  <div class='rightside col-sm-4'>
-          <iframe id="ytplayer" type="text/html" width="100%" height="280"
-              src="https://www.youtube.com/embed/M7lc1UVf-VE?autoplay=0&origin=http://example.com" frameborder="2">
-          </iframe>
-
-          <div class='medium_feed'>
-          <!-- start feedwind code --> <script type="text/javascript" src="https://feed.mikle.com/js/fw-loader.js" data-fw-param="65421/"></script> <!-- end feedwind code --> 
-          </div>
 
 
 
-          <div class='filler'>          </div>
-          </div>
-<br>
-
-</div>
-
-
-<div class='footer'>
-<ul>
-  <li>About</li>
-  <li>Help</li>
-  <li>Account</li>
-</ul>
-
-</div>

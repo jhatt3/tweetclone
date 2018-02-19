@@ -4,10 +4,15 @@
 
 
 <div>
-    <% @following_tweets.each do |tweet| %>
+    <% @following_tweets.reverse.each do |tweet| %>
     <div>
-        <p>@<%= tweet.user.username %></p>
-        <p><%= tweet.message.html_safe %></p>
+        <p>
+            <%= image_tag current_user.avatar.url, size:25, class: "user-pic-nav" %>
+            @<%= tweet.user.username %>
+            <%= tweet.message.html_safe %> 
+            &#8226; <%= time_ago_in_words(tweet.created_at) if Time.now - tweet.created_at < 86400 %>
+                    <%= tweet.created_at.strftime('%b%e') if Time.now - tweet.created_at > 86400 %>
+        </p>
     </div>
     <% end %>
 </div>
