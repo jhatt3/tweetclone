@@ -107,34 +107,81 @@
 
 //***************************************************//  
 
+body {
+        background-color: #e2e7ef;
+        color: #333;
+        margin: -1px;
+}
 
-.navbar {
-    background-color: #326ea7;
-    border: none;
+
+// .navbar {
+//     background-color: #326ea7;
+//     border: none;
+//     color: #ffffff;
+//     // -moz-box-shadow:    1px 1px 5px 6px #326ea7;
+//     // -webkit-box-shadow: 1px 1px 5px 6px #326ea7;
+//     // box-shadow:         1px 1px 2px 4px #326ea7;
+// }
+
+.navbar-brand {
+    font-style: none;
     color: #ffffff;
-    // -moz-box-shadow:    1px 1px 5px 6px #326ea7;
-    // -webkit-box-shadow: 1px 1px 5px 6px #326ea7;
-    // box-shadow:         1px 1px 2px 4px #326ea7;
 }
 
-.navbar .navbar-right {
-    background-color: #326ea7;
-
+.navbar-brand:hover {
+    font-style: none;
+    color: #090909;
 }
 
-.navbar .dropdown-toggle {
-    background-color: #326ea7;
-
+.nav a{
+    color: #ffffff;
 }
 
-.dropdown a {
+// .navbar .navbar-right {
+//     background-color: #326ea7;
+//     color: #333333;
+// }
+
+// .nav li:hover {
+//     background-color: #326ea7;
+//     color: #333333;
+
+// }
+
+// button span{
+//     // background-color: #326ea7;
+//     color: #333333;
+
+// }
+
+// button .icon-bar {
+//     color: #333333;
+//     // background-color: #326ea7
+// }
+
+.dropdown{
     background-color: #326ea7;
     color: #ffffff;   
 }
 
-.dropdown-menu li {
+.dropdown-menu {
+    background-color: #326ea7; 
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.dropdown-menu .btn {
     background-color: #326ea7;    
     color: #ffffff;
+    border-radius: 0;
+
+}
+
+.dropdown-menu .btn:hover {
+    background-color: #7ab8f3;    
+    color: #ffffff;
+    font-weight: bolder;
+
 }
 
 .tweetshead {
@@ -142,9 +189,13 @@
 }
  
 .rightside {
-    margin-top: 15px;
+    margin-top: 68px;
     margin-left: 0;
     padding-left: 0px;
+}
+
+.leftside {
+    margin-left: 0;
 }
 
 .filler {
@@ -296,12 +347,14 @@
     border-radius: 20%;
     padding-top: 0;
     z-index: -1;
+
 }
 
 .user-pic-nav:hover {
     box-shadow: 2px 2px #ffffff;
     width: 50px;
     height: 50px;
+    
 } 
 
 .youtube_feed {
@@ -333,6 +386,6 @@
 }
 
 #user_well {
-    height: 200px;
+    height: auto;
 }
 
