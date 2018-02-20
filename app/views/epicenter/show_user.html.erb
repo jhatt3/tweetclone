@@ -1,7 +1,7 @@
 <h1>@<%= @user.username %>'s Profile & Tweets</h1>
 
-<p><h3><%= @user.name %></h3></p><br>
-<p><h4><%= @user.location %></h4></p>
+<p><h3><%= @user.name.titleize %></h3></p><br>
+<p><h4><%= @user.location.upcase %></h4></p>
 <p><em><%= @user.bio %></em></p>
 
 <p>
@@ -18,7 +18,7 @@
     <div>
         <p>
             <%= image_tag current_user.avatar.url, size:25, class: "user-pic-nav" %>
-            @<%= @user.username %>
+            @<%= link_to @user.username, show_user_path(id: tweet.user.id) %>
         </p>
         <p class="msg">
             <%= tweet.message.html_safe %>

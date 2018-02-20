@@ -7,7 +7,7 @@
   <div>
     <% @tag.tweets.order(created_at: :desc).each do |tweet| %>
         <p> 
-        <%= tweet.user.name %> <%= "@#{tweet.user.username}" %>
+        <%= tweet.user.name.titleize %> <%= "@#{tweet.user.username}" %>
         &#8226; <%= time_ago_in_words(tweet.created_at) if Time.now - tweet.created_at < 86400 %>
         <%= tweet.created_at.strftime('%b%e') if Time.now - tweet.created_at > 86400 %>
 

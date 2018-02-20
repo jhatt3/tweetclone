@@ -61,4 +61,15 @@ class EpicenterController < ApplicationController
     end
   end
 
+  def followers_cnt
+    @user = User.find(params[:id])
+    @users = []
+
+    User.all.each do |user|
+      if user.following.include?(@user.id)
+        @followers_cnt = user.size
+      end
+    end
+  end
+
 end

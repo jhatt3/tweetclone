@@ -113,22 +113,44 @@ body {
         margin: -1px;
 }
 
+.quote {
+    border-bottom: 2px #326ea7;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.2em;
+    font-weight: bold;
 
-// .navbar {
-//     background-color: #326ea7;
-//     border: none;
-//     color: #ffffff;
-//     // -moz-box-shadow:    1px 1px 5px 6px #326ea7;
-//     // -webkit-box-shadow: 1px 1px 5px 6px #326ea7;
-//     // box-shadow:         1px 1px 2px 4px #326ea7;
-// }
+}
 
-.navbar-brand {
+.quote a {
+    color: #333333;
+    font-size: .9em;
+    font-weight: 400;
+}
+
+.quote a:hover{
+    text-decoration: none;
+    font-weight: 800;
+}
+
+
+
+.navbar {
+    background-color: #326ea7;
+    border: none;
+    color: #ffffff;
+    // -moz-box-shadow:    1px 1px 5px 6px #326ea7;
+    // -webkit-box-shadow: 1px 1px 5px 6px #326ea7;
+    // box-shadow:         1px 1px 2px 4px #326ea7;
+}
+
+.navbar-brand a {
+    background-color: #326ea7;
     font-style: none;
     color: #ffffff;
 }
 
-.navbar-brand:hover {
+.navbar-brand {
     font-style: none;
     color: #090909;
 }
@@ -137,35 +159,32 @@ body {
     color: #ffffff;
 }
 
-// .navbar .navbar-right {
-//     background-color: #326ea7;
-//     color: #333333;
-// }
+.navbar .navbar-right li a{
+    background-color: #326ea7;
+    color: #333333;
+}
 
-// .nav li:hover {
-//     background-color: #326ea7;
-//     color: #333333;
+.navbar-toggle {
+    background-color: #326ea7;
+}
 
-// }
-
-// button span{
-//     // background-color: #326ea7;
-//     color: #333333;
-
-// }
-
-// button .icon-bar {
-//     color: #333333;
-//     // background-color: #326ea7
-// }
+.navbar-nav li a:hover {
+    background-color: #326ea7;
+    color: #333333;
+}
 
 .dropdown{
     background-color: #326ea7;
     color: #ffffff;   
 }
 
+.dropdown-toggle:hover {
+    background-color: #7ab8f3
+}
+
 .dropdown-menu {
     background-color: #326ea7; 
+
     margin-top: 0;
     margin-bottom: 0;
 }
@@ -174,7 +193,9 @@ body {
     background-color: #326ea7;    
     color: #ffffff;
     border-radius: 0;
-
+    border-bottom: 1px;
+    border-top: 1px;
+    border-color: #090909
 }
 
 .dropdown-menu .btn:hover {
@@ -255,6 +276,9 @@ body {
     font-weight: bold;
 }
 
+.tweetpanel p{
+    font-family: 'Merriweather', serif;
+}
 
 .tweetbtn {
     font-family: 'Montserrat', sans-serif;
